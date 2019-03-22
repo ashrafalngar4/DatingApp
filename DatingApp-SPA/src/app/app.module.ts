@@ -14,12 +14,15 @@ import { ListsComponent } from './lists/lists.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MessagesComponent } from './messages/messages.component';
 import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { UserService } from './_services/user.service';
@@ -39,7 +42,8 @@ export function tokenGetter() {
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,9 @@ export function tokenGetter() {
       AuthGuard,
       UserService,
       MemberDetailResolver,
-      MemberListResolver
+      MemberListResolver,
+      MemberEditResolver,
+      PreventUnsavedChanges
     ],
   bootstrap: [AppComponent]
 })
