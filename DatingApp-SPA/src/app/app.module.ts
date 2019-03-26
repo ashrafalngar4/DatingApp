@@ -27,6 +27,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
+import {TimeAgoPipe} from 'time-ago-pipe';
 import { UserService } from './_services/user.service';
 import { appRoutes } from './routes';
 
@@ -46,7 +47,8 @@ export function tokenGetter() {
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
-    PhotoEditorComponent
+    PhotoEditorComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
