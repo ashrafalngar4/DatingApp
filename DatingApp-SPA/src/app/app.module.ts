@@ -1,4 +1,5 @@
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { BsDatepickerModule, BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AlertifyService } from './_services/alertify.service';
 import { AppComponent } from './app.component';
@@ -7,7 +8,6 @@ import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { FileUploadModule } from 'ng2-file-upload';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -52,7 +52,9 @@ export function tokenGetter() {
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
