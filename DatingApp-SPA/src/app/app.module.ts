@@ -20,7 +20,9 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MessagesResolver } from './_resolvers/messages.resolver';
 import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
@@ -49,7 +51,8 @@ export function tokenGetter() {
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ export function tokenGetter() {
       MemberListResolver,
       MemberEditResolver,
       PreventUnsavedChanges,
-      ListsResolver
+      ListsResolver,
+      MessagesResolver
     ],
   bootstrap: [AppComponent]
 })
